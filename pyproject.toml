@@ -20,6 +20,7 @@ requires-python = ">=3.13,<3.14"
 
 
 dependencies = [
+    "dvc>=3.66.1",
     "pandas>=3.0.0",
 ]
 
