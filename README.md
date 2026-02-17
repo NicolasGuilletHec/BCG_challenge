@@ -104,7 +104,7 @@ uv run pre-commit run --all-files
 
 **XHEC Data Science Challenge Team**
 
-- Mehdi XXXX
+- Mehdi DIGUA
 - Nicolas GUILLET
 - Augustin NATON
 
