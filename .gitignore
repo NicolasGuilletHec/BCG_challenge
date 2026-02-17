@@ -5,6 +5,12 @@
 !/data/.gitignore
 !data/.gitkeep
 
+# Raw data
+/raw_data/
+
+# Notebook outputs
+notebooks/outputs/
+
 archive/
 docs/ROADMAP.md
 
