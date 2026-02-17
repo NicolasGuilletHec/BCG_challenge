@@ -20,3 +20,12 @@ stages:
       - data/silver/
     outs:
       - data/gold/
+
+  # Stage 3: Train model
+  train_models:
+    cmd: uv run python -m src.pipelines.models.train_models
+    deps:
+      - src/pipelines/models/train_models.py
+      - data/gold/
+    outs:
+      - models/

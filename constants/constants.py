@@ -29,3 +29,15 @@ WINTER_MONTHS = [9, 10, 11, 12, 1, 2]  # Sep-Feb for winter precipitation
 # Train/validation split
 # ---------------------------------------------------------------------------
 VALIDATION_THRESHOLD_YEAR = 2013  # Years <= this go to training, > go to validation
+
+# ---------------------------------------------------------------------------
+# Scenarii names
+# ---------------------------------------------------------------------------
+SCENARIO_126 = "ssp1_2_6"
+SCENARIO_245 = "ssp2_4_5"
+SCENARIO_585 = "ssp5_8_5"
+
+# ---------------------------------------------------------------------------
+# Model training constants
+# ---------------------------------------------------------------------------
+RANDOM_STATE = 42  # For reproducibility of model training

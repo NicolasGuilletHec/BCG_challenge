@@ -117,3 +117,4 @@ CLAUDE.md
 
 # PDF presentations
 *.pdf
+/models

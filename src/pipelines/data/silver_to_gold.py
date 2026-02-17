@@ -22,8 +22,10 @@ from constants.column_names.gold import (
     GOLD_WINTER_PRECIP_TOTAL,
 )
 from constants.column_names.silver import (
+    SILVER_AREA,
     SILVER_NOM_DEP,
     SILVER_PRECIP,
+    SILVER_PRODUCTION,
     SILVER_SCENARIO,
     SILVER_TEMP_MAX,
     SILVER_TEMP_MEAN,
@@ -341,6 +343,13 @@ def create_gold_datasets(
         left_on=[SILVER_NOM_DEP, SILVER_YEAR],
         right_on=[SILVER_NOM_DEP, SILVER_YEAR],
         how="inner",
+    )
+
+    # Drop columns that aren't training features
+    # (area and production come from yield data and won't exist in scenario data;
+    # production is also derived from yield, so using it would be data leakage)
+    train_val_data = train_val_data.drop(
+        columns=[SILVER_AREA, SILVER_PRODUCTION, SILVER_SCENARIO]
     )
 
     # Split into training and validation datasets

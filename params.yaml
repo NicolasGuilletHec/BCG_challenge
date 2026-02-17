@@ -1,0 +1,35 @@
+# DVC Parameters Configuration
+# Modify these values and run `dvc exp run` to experiment with different settings
+# Or use `dvc exp run --set-param train_models.n_trials=100` to override
+
+train_models:
+  experiment_name: baseline  # Prefixed to run/model names (e.g. baseline_xgboost_run)
+  model_types:
+    - xgboost
+    # - lightgbm
+    # - catboost
+    # - random_forest
+
+# Dataset type per model: "default" (with NaN) or "clean" (NaN handled)
+# - default: For models that handle NaN natively (XGBoost, LightGBM, CatBoost)
+# - clean: For sklearn models that require no NaN (Linear Regression, Random Forest)
+datasets:
+  linear_regression: clean
+  xgboost: default
+  random_forest: clean
+  lightgbm: default
+  catboost: default
+
+create_predictions:
+  n_samples: 10
+  model_type: xgboost
+  run_id: 67a3af6b897d4e8398c3649996a81220  # Use the best model if null
+  random_seed: 42
+
+hyperparameters:
+  linear_regression:
+    fit_intercept: [true, false]
+  xgboost: null  # Uses default search space in xgboost_model.py
+  random_forest: null  # Uses default search space in random_forest.py
+  lightgbm: null  # Uses default search space in lightgbm_model.py
+  catboost: null  # Uses default search space in catboost_model.py

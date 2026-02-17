@@ -15,24 +15,42 @@ stages:
     outs:
     - path: data/silver/
       hash: md5
-      md5: bfdb07c2d369bd2a8f981ba2a63cea42.dir
-      size: 70152003
+      md5: 29093191e5176d00684b92c736130202.dir
+      size: 70969657
       nfiles: 2
   silver_to_gold:
     cmd: uv run python -m src.pipelines.data.silver_to_gold
     deps:
     - path: data/silver/
       hash: md5
-      md5: bfdb07c2d369bd2a8f981ba2a63cea42.dir
-      size: 70152003
+      md5: 29093191e5176d00684b92c736130202.dir
+      size: 70969657
       nfiles: 2
     - path: src/pipelines/data/silver_to_gold.py
       hash: md5
-      md5: e7d92ae09c89c0f80881342f0fcf5223
-      size: 14829
+      md5: e538cd90324ff70dea5b64d29970c89b
+      size: 15195
     outs:
     - path: data/gold/
       hash: md5
-      md5: 7234abd29ad3944705f1250e16132f9d.dir
-      size: 1717339
+      md5: 2c25334efe5c9711ab8b8de1307cdb8d.dir
+      size: 1681611
       nfiles: 4
+  train_models:
+    cmd: uv run python -m src.pipelines.models.train_models
+    deps:
+    - path: data/gold/
+      hash: md5
+      md5: 2c25334efe5c9711ab8b8de1307cdb8d.dir
+      size: 1681611
+      nfiles: 4
+    - path: src/pipelines/models/train_models.py
+      hash: md5
+      md5: 16ede479ab3d3ac59c5985898916e404
+      size: 2424
+    outs:
+    - path: models/
+      hash: md5
+      md5: 2fc9247a0a4fc16d687daf8014d1c426.dir
+      size: 233886
+      nfiles: 3

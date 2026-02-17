@@ -28,5 +28,11 @@ GOLD_TRAINING_PATH = GOLD_DIR / "training.parquet"
 GOLD_VALIDATION_PATH = GOLD_DIR / "validation.parquet"
 GOLD_SCENARIO_PATH = GOLD_DIR / "scenarios.parquet"
 
+# Model directory
+MODEL_DIR = PROJECT_ROOT / "models"
+
 # Configurations directory
 CONFIG_DIR = PROJECT_ROOT / "config"
+
+# Parameters file path
+PARAMS_FILE = PROJECT_ROOT / "params.yaml"

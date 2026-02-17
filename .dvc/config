@@ -1,0 +1,5 @@
+[core]
+    remote = b2bucket
+['remote "b2bucket"']
+    url = s3://xhec-bcgx-data-challenge
+    endpointurl = https://s3.eu-central-003.backblazeb2.com
