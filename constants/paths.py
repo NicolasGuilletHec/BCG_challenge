@@ -22,5 +22,11 @@ CLIMATE_PATH = BRONZE_DIR / "climate_data_from_1982.parquet"
 SILVER_YIELD_PATH = SILVER_DIR / "yield_clean.parquet"
 SILVER_CLIMATE_PATH = SILVER_DIR / "climate_clean.parquet"
 
+# Gold data paths
+GOLD_CLIMATE_PATH = GOLD_DIR / "climate_features.parquet"
+GOLD_TRAINING_PATH = GOLD_DIR / "training.parquet"
+GOLD_VALIDATION_PATH = GOLD_DIR / "validation.parquet"
+GOLD_SCENARIO_PATH = GOLD_DIR / "scenarios.parquet"
+
 # Configurations directory
 CONFIG_DIR = PROJECT_ROOT / "config"
