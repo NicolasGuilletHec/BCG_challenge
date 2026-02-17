@@ -10,7 +10,7 @@ PROJECT_ROOT = Path(__file__).parent.parent
 
 # Data directories
 DATA_DIR = PROJECT_ROOT / "data"
-BRONZE_DIR = DATA_DIR / "bronze"
+BRONZE_DIR = PROJECT_ROOT / "raw_data"
 SILVER_DIR = DATA_DIR / "silver"
 GOLD_DIR = DATA_DIR / "gold"
 
@@ -18,6 +18,9 @@ GOLD_DIR = DATA_DIR / "gold"
 BARLEY_PATH = BRONZE_DIR / "barley_yield_from_1982.csv"
 CLIMATE_PATH = BRONZE_DIR / "climate_data_from_1982.parquet"
 
+# Silver data paths
+SILVER_YIELD_PATH = SILVER_DIR / "yield_clean.parquet"
+SILVER_CLIMATE_PATH = SILVER_DIR / "climate_clean.parquet"
 
 # Configurations directory
 CONFIG_DIR = PROJECT_ROOT / "config"
