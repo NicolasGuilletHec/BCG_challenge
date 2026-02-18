@@ -118,3 +118,6 @@ CLAUDE.md
 # PDF presentations
 *.pdf
 /models
+
+# Streamlit app data (copies of pipeline outputs)
+my_app/data/

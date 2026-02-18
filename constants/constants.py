@@ -41,3 +41,8 @@ SCENARIO_585 = "ssp5_8_5"
 # Model training constants
 # ---------------------------------------------------------------------------
 RANDOM_STATE = 42  # For reproducibility of model training
+
+# ---------------------------------------------------------------------------
+# Streamlit app
+# ---------------------------------------------------------------------------
+BASELINE_AREA_YEAR = 2014  # Baseline year for area extrapolation in predictions

@@ -31,6 +31,17 @@ GOLD_SCENARIO_PATH = GOLD_DIR / "scenarios.parquet"
 # Model directory
 MODEL_DIR = PROJECT_ROOT / "models"
 
+# Streamlit app paths
+APP_DIR = PROJECT_ROOT / "my_app"
+APP_DATA_DIR = APP_DIR / "data"
+APP_GEO_DIR = APP_DIR / "geo"
+
+APP_HIST_PATH = APP_DATA_DIR / "barley_yield_from_1982.csv"
+APP_PRED_126_PATH = APP_DATA_DIR / "scenario_126_predictions.csv"
+APP_PRED_245_PATH = APP_DATA_DIR / "scenario_245_predictions.csv"
+APP_PRED_585_PATH = APP_DATA_DIR / "scenario_585_predictions.csv"
+APP_GEOJSON_PATH = APP_GEO_DIR / "departements.geojson"
+
 # Configurations directory
 CONFIG_DIR = PROJECT_ROOT / "config"
 
