@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 import yaml
 
-from constants.column_names.gold import GOLD_NOM_DEP, GOLD_YIELD
+from constants.column_names.gold import GOLD_NOM_DEP, GOLD_YEAR, GOLD_YIELD
 from constants.paths import GOLD_TRAINING_PATH, GOLD_VALIDATION_PATH, PARAMS_FILE
 
 TARGET_COLUMN = GOLD_YIELD
@@ -45,10 +45,11 @@ def load_training_data():
     test_data[GOLD_NOM_DEP] = dep_encoder.transform(test_data[GOLD_NOM_DEP])
 
     # Split into features and target
-    X_train = train_data.drop(columns=[TARGET_COLUMN])
+    drop_cols = [TARGET_COLUMN, GOLD_YEAR]
+    X_train = train_data.drop(columns=drop_cols)
     y_train = train_data[TARGET_COLUMN]
 
-    X_test = test_data.drop(columns=[TARGET_COLUMN])
+    X_test = test_data.drop(columns=drop_cols)
     y_test = test_data[TARGET_COLUMN]
 
     return X_train, y_train, X_test, y_test, dep_encoder

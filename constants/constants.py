@@ -28,7 +28,7 @@ WINTER_MONTHS = [9, 10, 11, 12, 1, 2]  # Sep-Feb for winter precipitation
 # ---------------------------------------------------------------------------
 # Train/validation split
 # ---------------------------------------------------------------------------
-VALIDATION_THRESHOLD_YEAR = 2013  # Years <= this go to training, > go to validation
+VALIDATION_THRESHOLD_YEAR = 2011  # Years <= this go to training, > go to validation
 
 # ---------------------------------------------------------------------------
 # Scenarii names

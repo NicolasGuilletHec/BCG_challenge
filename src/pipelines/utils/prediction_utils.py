@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 
 from constants.column_names.dashboard import DASHBOARD_COLUMNS, DASHBOARD_YIELD
-from constants.column_names.gold import GOLD_NOM_DEP, GOLD_SCENARIO
+from constants.column_names.gold import GOLD_NOM_DEP, GOLD_SCENARIO, GOLD_YEAR
 from constants.constants import SCENARIO_126, SCENARIO_245, SCENARIO_585
 import constants.paths as pth
 
@@ -84,10 +84,10 @@ def prediction_pipeline(
     # Prepare data for prediction
     scenario_126, scenario_245, scenario_585 = prepare_prediction_data(dep_encoder)
 
-    # Make predictions on each scenario
-    pred_1 = model.predict(scenario_126)
-    pred_2 = model.predict(scenario_245)
-    pred_3 = model.predict(scenario_585)
+    # Make predictions on each scenario (drop year — not a model feature)
+    pred_1 = model.predict(scenario_126.drop(columns=[GOLD_YEAR]))
+    pred_2 = model.predict(scenario_245.drop(columns=[GOLD_YEAR]))
+    pred_3 = model.predict(scenario_585.drop(columns=[GOLD_YEAR]))
 
     # Prepare dashboard data (decodes nom_dep back to names)
     scenario_126_dashboard_data = prepare_dashboard_data(
